@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "Get user data",
+      "method": "GET",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "username": "string",
+        "points": 0
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

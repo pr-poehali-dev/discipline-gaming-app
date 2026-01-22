@@ -1,0 +1,35 @@
+{
+  "tests": [
+    {
+      "name": "Get tasks for user",
+      "method": "GET",
+      "headers": {
+        "X-User-Id": "1"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "tasks": []
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new task",
+      "method": "POST",
+      "headers": {
+        "X-User-Id": "1",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "title": "Test task",
+        "time": "09:00",
+        "points": 50,
+        "category": "Test"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "message": "Task created"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
